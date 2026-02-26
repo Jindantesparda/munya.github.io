@@ -72,6 +72,367 @@
 
         /* Photo Gallery for POTRAZ */
         .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }
+        .photo-gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; cursor: pointer; }
+        .photo-gallery img:hover { transform: scale(1.05); border-color: #fff; }
+
+        /* Modal / Lightbox Styling */
+        .modal {
+            display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center;
+        }
+        .modal-content { max-width: 80%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 20px rgba(0,242,255,0.5); }
+        .close-modal { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+        .exp-item { margin-bottom: 2.5rem; padding-left: 20px; border-left: 2px solid #fff; }
+        .exp-item h3 { margin: 0; font-size: 1.3rem; }
+        .exp-item span { color: #888; font-size: 0.85rem; font-weight: 900; display: block; margin-bottom: 5px; }
+        
+        .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+        .tag { background: rgba(255,255,255,0.1); padding: 6px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; text-decoration: none; color: white; transition: 0.3s; border: 1px solid transparent; }
+        .tag:hover { background: white; color: black; }
+
+        footer { text-align: center; padding: 4rem; color: #666; font-size: 0.8rem; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <div id="custom-cursor"></div>
+    <nav>
+        <div class="logo" style="font-weight: 900; letter-spacing: 2px;">M.MZITE</div>
+        <div class="nav-links">
+            <a href="#about">ABOUT</a>
+            <a href="#graphics">GRAPHICS</a>
+            <a href="#code">PROJECTS</a>
+            <a href="#experience">EXP & EDU</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <div id="canvas-container"></div>
+
+    <div class="main-content">
+        <section class="hero-section">
+            <h1>Munyaradzi<br>Mzite</h1>
+            <p class="subtitle">Computer Scientist & Blender 3D Artist</p>
+            <p style="font-size: 1rem; color: #ccc; margin-top: 5px;">mp.mzite@africau.edu</p>
+        </section>
+
+        <div class="section-container" id="about">
+            <div class="card">
+                <h2>About Me</h2>
+                <p style="font-size: 1.2rem; line-height: 1.6; color: #ccc;">
+                    I'm a software developer Intern at <strong>NetOne-Cellular</strong> and a computer science student at <strong>Africa University</strong> with a passion for bridging the gap between Art and Technology.
+                    I train and run my own AI models locally and specialize in 3D modeling, 2D animation, and portrait art.
+                    I am deeply interested in AI-driven creativity, including photogrammetry, 3D Gaussian Splatting (3DGS), and machine learning tools like Unity’s ML Agents.
+                    I am driven by developing software that solves real-world problems through automation and innovative solutions.
+                </p>
+                <div class="tag-container">
+                    <span class="tag">Java</span><span class="tag">Ubuntu</span><span class="tag">Springboot</span><span class="tag">Python</span> 
+                    <span class="tag">Three.js</span><span class="tag">OpenCV</span><span class="tag">Blender 3D</span><span class="tag">C#</span> 
+                    <span class="tag">Unity</span><span class="tag">AI/ML</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container" id="graphics">
+            <h2>Computer Graphics</h2>
+            <div class="video-grid">
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/KcCD5H2ucf0" allowfullscreen></iframe></div><div class="video-title">Bvumba Mist Advert (3D Mockup 2025)</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/F4MqL3jv_6Q" allowfullscreen></iframe></div><div class="video-title">Ona Natural Oils</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/NcoagQrNu2w" allowfullscreen></iframe></div><div class="video-title">2D anime acrobat</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/gv0LeXxknWw" allowfullscreen></iframe></div><div class="video-title">3D Character Animation</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/LpKz78ZzPkk" allowfullscreen></iframe></div><div class="video-title">Elevator Scene</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/dLEk9eDhq9I" allowfullscreen></iframe></div><div class="video-title">2D Animation Run Cycle</div></div>
+                <div class="video-item">
+                    <div class="video-container" style="background: url('https://img.youtube.com/vi/CAD1JIJU5FQ/maxresdefault.jpg') center/cover; cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=CAD1JIJU5FQ', '_blank')">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white;">
+                            <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid white; margin-left: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="video-title">final bmo animation</div>
+                </div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/51k3zmcS5DM" allowfullscreen></iframe></div><div class="video-title">2D Head Turn</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/bZJsPfPPHG0" allowfullscreen></iframe></div><div class="video-title">Gabe Guckdrop 2</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/mNf3xePn-LA" allowfullscreen></iframe></div><div class="video-title">Gabe Guckdrop</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/AX50ZrXAZ7Y" allowfullscreen></iframe></div><div class="video-title">2D breakdown</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/CCQCC9qtaxs" allowfullscreen></iframe></div><div class="video-title">Mako Stories</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/reRqeSdG5ok" allowfullscreen></iframe></div><div class="video-title">Deer Driver Proposal</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/V2OCazkydRE" allowfullscreen></iframe></div><div class="video-title">Beer Scene WIP</div></div>
+                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/jkqriT_b2co" allowfullscreen></iframe></div><div class="video-title">Gunvoster scene</div></div>
+            </div>
+        </div>
+
+        <div class="section-container" id="code">
+            <div class="card">
+                <h2>Featured Projects</h2>
+                
+                <div class="exp-item">
+                    <span>OCT 2024 - PRESENT</span>
+                    <h3>Braille-Eyes (Co-founder & Lead Developer)</h3>
+                    <p style="color: #ccc; line-height: 1.6;">
+                        A wearable assistive technology device for visually impaired navigation using computer vision.
+                    </p>
+
+                    <div class="video-container" style="margin-bottom: 10px; width: 80%;">
+                        <iframe src="https://www.youtube.com/embed/eXyAgsj5vXY?si=k6VOkyNBoPTgrJ-2" allowfullscreen></iframe>
+                    </div>
+                    <a href="https://technomag.co.zw/au-students-unveils-ai-powered-braille-eyes-to-help-the-blind-navigate-freely/" target="_blank" class="article-highlight">
+                        <img src="technoimage.jpg" alt="TechnoMag">
+                        <h4>TechnoMag: AU Students Unveil Braille-Eyes</h4>
+                    </a>
+
+                    <div class="photo-gallery">
+                        <img src="2025_08_01_17_08_IMG_1326.jpg" alt="Winning Stage" class="gallery-img">
+                        <img src="2025_08_01_17_10_IMG_1322.jpg" alt="POTRAZ Certificate" class="gallery-img">
+                        <img src="2025_07_30_09_23_IMG_1189.jpg" alt="Exhibition Booth" class="gallery-img">
+                    </div>
+
+                    <ul style="padding-left: 20px; color: #bbb; font-size: 0.95rem; line-height: 1.6;">
+                        <li>Built real-time object detection and obstacle avoidance using Python, OpenCV, and MiDAS on a Raspberry Pi 5.</li>
+                        <li>Won 2nd place at POTRAZ 2025 4IR Innovation Competition against 79 other teams nationwide.</li>
+                        <li>Operates completely offline with fast audio reconstruction and translation.</li>
+                        <li>Made an appearance on ZBC and Diamond FM.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <span>2025</span>
+                    <h3>Bvumba Mist 3D Advert</h3>
+                    <p style="color: #ccc;">Produced a professional 3D water bottle mockup advert for Bvumba Mist bottled water company.</p>
+                </div>
+
+                <div class="exp-item">
+                    <span>2024</span>
+                    <h3>Game Development (Unity / C#)</h3>
+                    <p style="color: #ccc;">Developed custom mechanics, procedural generation, and character controllers in Unity.</p>
+                </div>
+
+                <div class="exp-item">
+                    <span>2025</span>
+                    <h3>Offline Payment Software</h3>
+                    <p style="color: #ccc;">Developed for ZB Bank Fintech Hackathon. Secure QR and NFC payments without internet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container" id="experience">
+            <div class="card">
+                <h2>Professional Experience</h2>
+                <div class="exp-item">
+                    <span>OCT 2025 - PRESENT</span>
+                    <h3>Software Developer Intern</h3>
+                    <p><strong>NetOne Cellular Private Limited</strong></p>
+                    <ul style="padding-left: 20px; color: #ccc; line-height: 1.6;">
+                        <li>Developing telecommunications software solutions using Java, Python, and Three.js.</li>
+                        <li>Working with cloud infrastructure and backend systems for network management.</li>
+                        <li>Collaborated with developers on certain projects.</li>
+                    </ul>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <h2>Education & Certificates</h2>
+                <div class="exp-item">
+                    <span>2022 - 2026</span>
+                    <h3>B.Sc Computer Science</h3>
+                    <p>Africa University (CGPA 3.4)</p>
+                </div>
+                <div class="exp-item">
+                    <span>Certifications</span>
+                    <ul style="padding-left: 20px; color: #ccc;">
+                        <li>Introduction to Cybersecurity (Cisco)</li>
+                        <li>Java for Beginners (Udemy)</li>
+                        <li>Building with Artificial Intelligence (Saylor)</li>
+                        <li>Introduction to Python (Saylor)</li>
+                        <li>Information Security (Cisco)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container" id="contact">
+            <div class="card">
+                <h2>Connect</h2>
+                <div class="tag-container">
+                    <a href="https://github.com/Jindantesparda" class="tag" target="_blank">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/munyaradzi-mzite-1499b3202/" class="tag" target="_blank">LINKEDIN</a>
+                    <a href="https://www.instagram.com/sssensationall/" class="tag" target="_blank">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+        <footer><p>© 2026 Munyaradzi Mzite. All Rights Reserved.</p></footer>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+        import { RGBShiftShader } from 'three/addons/shaders/RGBShiftShader.js';
+
+        let scene, camera, renderer, model, pointLight, wrapper, composer;
+        const cursor = document.getElementById('custom-cursor');
+
+        // Lightbox Modal Logic
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeBtn.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x2a2a2a);
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.toneMapping = THREE.ReinhardToneMapping;
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            composer = new EffectComposer(renderer);
+            composer.addPass(new RenderPass(scene, camera));
+            const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.3, 0.1, 0.85);
+            composer.addPass(bloomPass);
+            const rgbShift = new ShaderPass(RGBShiftShader);
+            rgbShift.uniforms['amount'].value = 0.002;
+            composer.addPass(rgbShift);
+
+            scene.add(new THREE.AmbientLight(0xffffff, 2));
+            pointLight = new THREE.PointLight(0xffffff, 50, 10); 
+            scene.add(pointLight);
+
+            new GLTFLoader().load('munyaradzi.glb', (gltf) => {
+                model = gltf.scene;
+                wrapper = new THREE.Group();
+                scene.add(wrapper);
+                wrapper.add(model);
+                const box = new THREE.Box3().setFromObject(model);
+                const center = box.getCenter(new THREE.Vector3());
+                model.position.set(-center.x, -center.y, -center.z);
+                wrapper.scale.set(2.8, 2.8, 2.8); 
+                wrapper.position.set(0, 0.8, 0); 
+                camera.position.set(0, 0.5, 4.5);
+                camera.lookAt(0, 0.5, 0);
+                animate();
+            }, undefined, (error) => console.error('Model error:', error));
+
+            window.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                if (pointLight) pointLight.position.set(((e.clientX/window.innerWidth)*2-1)*4, (-(e.clientY/window.innerHeight)*2+1)*4, 2);
+            });
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                composer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        function animate() { requestAnimationFrame(animate); composer.render(); }
+        init();
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munyaradzi Mzite | Developer & Blender 3D Artist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        body { 
+            margin: 0; padding: 0; background: #2a2a2a; color: white; 
+            font-family: 'Inter', sans-serif; overflow-x: hidden;
+            cursor: none; 
+        }
+        
+        #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
+
+        #custom-cursor {
+            position: fixed; width: 10px; height: 10px; background: white; border-radius: 50%;
+            pointer-events: none; z-index: 9999; transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .main-content { position: relative; z-index: 2; width: 100%; }
+        
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; position: fixed; width: 80%; z-index: 100;
+            background: linear-gradient(to bottom, rgba(42,42,42,0.9), transparent);
+        }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; }
+
+        .hero-section { 
+            height: 100vh; display: flex; flex-direction: column; 
+            justify-content: flex-end; padding: 0 10% 10vh 10%; 
+            box-sizing: border-box; pointer-events: none;
+        }
+
+        h1 { font-size: clamp(3rem, 8vw, 6rem); margin: 0; text-transform: uppercase; font-weight: 900; line-height: 0.9; }
+        .subtitle { font-size: 1.2rem; color: #bbb; margin-top: 10px; letter-spacing: 2px; }
+
+        .section-container { padding: 4rem 10%; max-width: 1200px; margin: 0 auto; }
+        .card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px; padding: 3rem; margin-bottom: 4rem;
+        }
+
+        h2 { font-size: 2.5rem; font-weight: 900; margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 2rem; }
+        
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 2rem; }
+        .video-item { transition: transform 0.3s ease, filter 0.3s ease; }
+        .video-item:hover { transform: translateY(-5px); filter: brightness(1.1); }
+        
+        .video-container { 
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
+            border-radius: 12px; background: #000; border: 1px solid #444;
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; }
+        .video-title { font-size: 0.9rem; margin-top: 10px; font-weight: 700; color: #eee; text-transform: uppercase; }
+
+        /* Compact Article Link */
+        .article-highlight {
+            display: flex; align-items: center; gap: 12px; margin: 15px 0; padding: 10px 15px; 
+            border: 1px solid rgba(0, 242, 255, 0.5); border-radius: 10px; background: rgba(0, 242, 255, 0.05);
+            text-decoration: none; transition: 0.3s; width: fit-content; max-width: 400px;
+        }
+        .article-highlight:hover { background: rgba(0, 242, 255, 0.15); border-color: #00f2ff; }
+        .article-highlight img { width: 60px; height: 45px; object-fit: cover; border-radius: 4px; }
+        .article-highlight h4 { margin: 0; font-size: 0.85rem; color: white; font-weight: 700; }
+
+        /* Photo Gallery for POTRAZ */
+        .photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; }
         .photo-gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
         .photo-gallery img:hover { transform: scale(1.05); border-color: #fff; }
 
