@@ -50,15 +50,34 @@
         h2 { font-size: 2.5rem; font-weight: 900; margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 2rem; }
         
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 2rem; }
-        .video-item { transition: transform 0.3s ease, filter 0.3s ease; }
+        .video-thumb{
+        display:block;
+        text-decoration:none;
+        color:white;
+        }
         .video-item:hover { transform: translateY(-5px); filter: brightness(1.1); }
         
-        .video-container { 
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
-            border-radius: 12px; background: #000; border: 1px solid #444;
+        .video-thumb img{
+        width:100%;
+        aspect-ratio:16/9;
+        object-fit:cover;
+        border-radius:12px;
+        border:1px solid rgba(255,255,255,0.15);
+        transition:all.3s ease;
+        }   
+
+        .video-thumb:hover img{
+        transform:scale(1.03);
+        filter:brightness(1.1);
         }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; }
-        .video-title { font-size: 0.9rem; margin-top: 10px; font-weight: 700; color: #eee; text-transform: uppercase; }
+
+        .video-title{
+        margin-top:12px;
+        font-size:0.9rem;
+        font-weight:700;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        }
 
         /* Prominent TechnoMag Style */
         .featured-press {
@@ -142,33 +161,85 @@
         </div>
 
         <div class="section-container" id="graphics">
-            <h2>Computer Graphics</h2>
-            <div class="video-grid">
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/KcCD5H2ucf0" allowfullscreen></iframe></div><div class="video-title">Bvumba Mist Advert (3D Mockup 2025)</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube.com/embed/4LTn85-jc9o?si=Fl5M4f5T18kQzuw3" allowfullscreen></iframe></div><div class="video-title">Home Connect (2026)</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/F4MqL3jv_6Q" allowfullscreen></iframe></div><div class="video-title">Ona Natural Oils</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/NcoagQrNu2w" allowfullscreen></iframe></div><div class="video-title">2D anime acrobat</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/gv0LeXxknWw" allowfullscreen></iframe></div><div class="video-title">3D Character Animation</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/LpKz78ZzPkk" allowfullscreen></iframe></div><div class="video-title">Elevator Scene</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/dLEk9eDhq9I" allowfullscreen></iframe></div><div class="video-title">2D Animation Run Cycle</div></div>
-                <div class="video-item">
-                    <div class="video-container" style="background: url('https://img.youtube.com/vi/CAD1JIJU5FQ/maxresdefault.jpg') center/cover; cursor: pointer;" onclick="window.open('https://www.youtube.com/watch?v=CAD1JIJU5FQ', '_blank')">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(0,0,0,0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white;">
-                            <div style="width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid white; margin-left: 5px;"></div>
-                        </div>
-                    </div>
-                    <div class="video-title">final bmo animation</div>
-                </div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/51k3zmcS5DM" allowfullscreen></iframe></div><div class="video-title">2D Head Turn</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/bZJsPfPPHG0" allowfullscreen></iframe></div><div class="video-title">Gabe Guckdrop 2</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/mNf3xePn-LA" allowfullscreen></iframe></div><div class="video-title">Gabe Guckdrop</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/AX50ZrXAZ7Y" allowfullscreen></iframe></div><div class="video-title">2D breakdown</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/CCQCC9qtaxs" allowfullscreen></iframe></div><div class="video-title">Mako Stories</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/reRqeSdG5ok" allowfullscreen></iframe></div><div class="video-title">Deer Driver Proposal</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/V2OCazkydRE" allowfullscreen></iframe></div><div class="video-title">Beer Scene WIP</div></div>
-                <div class="video-item"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/jkqriT_b2co" allowfullscreen></iframe></div><div class="video-title">Gunvoster scene</div></div>
-            </div>
-        </div>
+    <h2>Computer Graphics</h2>
+
+    <div class="video-grid">
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=KcCD5H2ucf0" target="_blank">
+            <img src="https://img.youtube.com/vi/KcCD5H2ucf0/maxresdefault.jpg" alt="Bvumba Mist Advert">
+            <div class="video-title">Bvumba Mist Advert (3D Mockup 2025)</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=4LTn85-jc9o" target="_blank">
+            <img src="https://img.youtube.com/vi/4LTn85-jc9o/maxresdefault.jpg" alt="Home Connect">
+            <div class="video-title">Home Connect (2026)</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=F4MqL3jv_6Q" target="_blank">
+            <img src="https://img.youtube.com/vi/F4MqL3jv_6Q/maxresdefault.jpg" alt="Ona Natural Oils">
+            <div class="video-title">Ona Natural Oils</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=NcoagQrNu2w" target="_blank">
+            <img src="https://img.youtube.com/vi/NcoagQrNu2w/maxresdefault.jpg" alt="2D Anime Acrobat">
+            <div class="video-title">2D Anime Acrobat</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=gv0LeXxknWw" target="_blank">
+            <img src="https://img.youtube.com/vi/gv0LeXxknWw/maxresdefault.jpg" alt="3D Character Animation">
+            <div class="video-title">3D Character Animation</div>
+        </a>
+
+       
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=dLEk9eDhq9I" target="_blank">
+            <img src="https://img.youtube.com/vi/dLEk9eDhq9I/maxresdefault.jpg" alt="2D Animation Run Cycle">
+            <div class="video-title">2D Animation Run Cycle</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=CAD1JIJU5FQ" target="_blank">
+            <img src="https://img.youtube.com/vi/CAD1JIJU5FQ/maxresdefault.jpg" alt="Final BMO Animation">
+            <div class="video-title">Final BMO Animation</div>
+        </a>
+
+      
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=bZJsPfPPHG0" target="_blank">
+            <img src="https://img.youtube.com/vi/bZJsPfPPHG0/maxresdefault.jpg" alt="Gabe Guckdrop 2">
+            <div class="video-title">Gabe Guckdrop 2</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=mNf3xePn-LA" target="_blank">
+            <img src="https://img.youtube.com/vi/mNf3xePn-LA/maxresdefault.jpg" alt="Gabe Guckdrop">
+            <div class="video-title">Gabe Guckdrop</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=AX50ZrXAZ7Y" target="_blank">
+            <img src="https://img.youtube.com/vi/AX50ZrXAZ7Y/maxresdefault.jpg" alt="2D Breakdown">
+            <div class="video-title">2D Breakdown</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=CCQCC9qtaxs" target="_blank">
+            <img src="https://img.youtube.com/vi/CCQCC9qtaxs/maxresdefault.jpg" alt="Mako Stories">
+            <div class="video-title">Mako Stories</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=reRqeSdG5ok" target="_blank">
+            <img src="https://img.youtube.com/vi/reRqeSdG5ok/maxresdefault.jpg" alt="Deer Driver Proposal">
+            <div class="video-title">Deer Driver Proposal</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=V2OCazkydRE" target="_blank">
+            <img src="https://img.youtube.com/vi/V2OCazkydRE/maxresdefault.jpg" alt="Beer Scene WIP">
+            <div class="video-title">Beer Scene WIP</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=jkqriT_b2co" target="_blank">
+            <img src="https://img.youtube.com/vi/jkqriT_b2co/maxresdefault.jpg" alt="Gunvoster Scene">
+            <div class="video-title">Gunvoster Scene</div>
+        </a>
+
+    </div>
+</div>
 
         <div class="section-container" id="code">
     <div class="card">
