@@ -17,6 +17,7 @@
         @media (hover: none) and (pointer: coarse) {
             body { cursor: auto; }
             #custom-cursor { display: none; }
+            #canvas-container { pointer-events: none; }
         }
         
         #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1; }
@@ -401,18 +402,16 @@
         understand exactly what they are paying for before arrival.
     </p>
 
-    <div style="margin: 20px 0;">
-    <img
-        src="zimvista-cover.png"
-        class="lightbox-trigger"
-        alt="HomeConnect Overview"
-        style="
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            cursor: pointer;
-        ">
-</div>
+    <div style="margin: 20px 0; display: flex; justify-content: center;">
+        <iframe 
+            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473360208774205441?collapsed=1" 
+            height="550" width="504" 
+            frameborder="0" 
+            allowfullscreen 
+            title="ZimVista LinkedIn Post"
+            style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;">
+        </iframe>
+    </div>
 
     <div class="photo-gallery">
         <img src="zimvista1.png" class="lightbox-trigger" alt="ZimVista Scene">
