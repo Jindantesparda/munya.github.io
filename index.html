@@ -431,6 +431,55 @@
     </ul>
 </div>
 
+
+<div class="exp-item">
+    <span>2026</span>
+    <h3>SCIF (SIM Contact Image Format)</h3>
+
+    <p style="color: #ccc; line-height: 1.6;">
+        SCIF is an experimental file format that demonstrates how grayscale
+        image data can be stored inside SIM card contact records.
+        The project explores constrained storage systems, custom file format
+        design, and data serialization by implementing a complete encoding,
+        decoding, verification, and reconstruction pipeline.
+        <p>Using this approach I can store a 64x64 grayscale image in a sim card's contact storage, which is typically reserved for phonebook entries.</p>
+    </p>
+
+    <div style="margin:20px 0;">
+        <img
+            src="scif-workflow.png"
+            class="lightbox-trigger"
+            alt="SCIF Architecture"
+            style="
+                width:100%;
+                border-radius:12px;
+                border:1px solid rgba(255,255,255,0.1);
+                cursor:pointer;
+            ">
+    </div>
+
+    <ul style="padding-left:20px; color:#bbb; font-size:0.95rem; line-height:1.6;">
+        <li>Designed a custom <strong>.scif</strong> image file format from scratch.</li>
+        <li>Built a complete encoder and decoder for grayscale image reconstruction.</li>
+        <li>Simulated SIM card contact storage using fixed-length contact records.</li>
+        <li>Implemented verification tools to ensure reconstruction integrity.</li>
+        <li>Generated storage statistics including SIM usage and contact allocation.</li>
+        <li>Released the first stable version (SCIF v1) as an open-source project.</li>
+    </ul>
+
+    <div class="tag-container" style="margin-top:20px;">
+        <a href="https://github.com/Jindantesparda/SCIF" class="tag" target="_blank">
+            GitHub
+        </a>
+
+        <span class="tag">Python</span>
+        <span class="tag">Pillow</span>
+        <span class="tag">Custom File Format</span>
+        <span class="tag">Serialization</span>
+        <span class="tag">Image Processing</span>
+    </div>
+</div>
+
 <div class="exp-item">
     <span>2026</span>
     <h3>HomeConnect (Diaspora Child Welfare Platform)</h3>
