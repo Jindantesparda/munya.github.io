@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Munyaradzi Mzite | Developer & Blender 3D Artist</title>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munyaradzi Mzite | Developer & Blender 3D Artist</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
     body {
         margin: 0;
@@ -526,717 +526,369 @@
         footer {
             padding: 2.5rem 1rem;
         }
-    }
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    .stack-icons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 16px 0;
-    }
-
-    .stack-chip {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 12px;
-        background: rgba(255,255,255,.06);
-        border: 1px solid rgba(255,255,255,.12);
-        border-radius: 999px;
-        font-size: .82rem;
-        font-weight: 600;
-    }
-
-    .stack-chip img {
-        width: 18px;
-        height: 18px;
-    }
-</style>
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 
 <body>
 
-<div class="modal" id="imageModal">
-    <span class="close-modal">×</span>
-    <img class="modal-content" id="img01"/>
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <div id="custom-cursor"></div>
+    <nav>
+        <div class="logo" style="font-weight: 900; letter-spacing: 2px;">M.MZITE</div>
+        <div class="nav-links">
+            <a href="#about">ABOUT</a>
+            <a href="#graphics">GRAPHICS</a>
+            <a href="#code">PROJECTS</a>
+            <a href="#experience">EXP & EDU</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <div id="canvas-container"></div>
+
+    <div class="main-content">
+        <section class="hero-section">
+            <h1>Munyaradzi<br>Mzite</h1>
+            <p class="subtitle">Computer Scientist & Blender 3D Artist</p>
+            <p style="font-size: 1rem; color: #ccc; margin-top: 5px;">mp.mzite@africau.edu</p>
+        </section>
+
+        <div class="section-container" id="about">
+            <div class="card">
+                <h2>About Me</h2>
+                <p style="font-size: 1.2rem; line-height: 1.6; color: #ccc;">
+                    I'm a software developer and I completed a Software Development internship at <strong>NetOne-Cellular</strong> and a BSc Computer Science graduate from<strong> Africa University</strong> with a passion for bridging the gap between Art and Technology.
+                    I train and run my own AI models locally and specialize in 3D modeling, 2D animation, and portrait art.
+                    I am deeply interested in AI-driven creativity, including photogrammetry, 3D Gaussian Splatting (3DGS), and machine learning tools like Unity ML-Agents.
+                    I am driven by developing software that solves real-world problems through automation and innovative solutions.
+                </p>
+                <div class="tag-container">
+                    <span class="tag">Java</span><span class="tag">Ubuntu</span><span class="tag">Springboot</span><span class="tag">Python</span> 
+                    <span class="tag">Three.js</span><span class="tag">OpenCV</span><span class="tag">Blender 3D</span><span class="tag">C#</span> 
+                    <span class="tag">Unity</span><span class="tag">AI/ML</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container" id="graphics">
+    <h2>Computer Graphics</h2>
+
+    <div class="video-grid">
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=KcCD5H2ucf0" target="_blank">
+            <img src="https://img.youtube.com/vi/KcCD5H2ucf0/maxresdefault.jpg" alt="Bvumba Mist Advert">
+            <div class="video-title">Bvumba Mist Advert (3D Mockup 2025)</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=4LTn85-jc9o" target="_blank">
+            <img src="https://img.youtube.com/vi/4LTn85-jc9o/maxresdefault.jpg" alt="Home Connect">
+            <div class="video-title">Home Connect (2026)</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=F4MqL3jv_6Q" target="_blank">
+            <img src="https://img.youtube.com/vi/F4MqL3jv_6Q/maxresdefault.jpg" alt="Ona Natural Oils">
+            <div class="video-title">Ona Natural Oils</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=NcoagQrNu2w" target="_blank">
+            <img src="https://img.youtube.com/vi/NcoagQrNu2w/maxresdefault.jpg" alt="2D Anime Acrobat">
+            <div class="video-title">2D Anime Acrobat</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=gv0LeXxknWw" target="_blank">
+            <img src="https://img.youtube.com/vi/gv0LeXxknWw/maxresdefault.jpg" alt="3D Character Animation">
+            <div class="video-title">3D Character Animation</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=dLEk9eDhq9I" target="_blank">
+            <img src="https://img.youtube.com/vi/dLEk9eDhq9I/maxresdefault.jpg" alt="2D Animation Run Cycle">
+            <div class="video-title">2D Animation Run Cycle</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=CAD1JIJU5FQ" target="_blank">
+            <img src="https://img.youtube.com/vi/CAD1JIJU5FQ/maxresdefault.jpg" alt="Final BMO Animation">
+            <div class="video-title">Final BMO Animation</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=bZJsPfPPHG0" target="_blank">
+            <img src="https://img.youtube.com/vi/bZJsPfPPHG0/maxresdefault.jpg" alt="Gabe Guckdrop 2">
+            <div class="video-title">Gabe Guckdrop 2</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=mNf3xePn-LA" target="_blank">
+            <img src="https://img.youtube.com/vi/mNf3xePn-LA/maxresdefault.jpg" alt="Gabe Guckdrop">
+            <div class="video-title">Gabe Guckdrop</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=AX50ZrXAZ7Y" target="_blank">
+            <img src="https://img.youtube.com/vi/AX50ZrXAZ7Y/maxresdefault.jpg" alt="2D Breakdown">
+            <div class="video-title">2D Breakdown</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=CCQCC9qtaxs" target="_blank">
+            <img src="https://img.youtube.com/vi/CCQCC9qtaxs/maxresdefault.jpg" alt="Mako Stories">
+            <div class="video-title">Mako Stories</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=reRqeSdG5ok" target="_blank">
+            <img src="https://img.youtube.com/vi/reRqeSdG5ok/maxresdefault.jpg" alt="Deer Driver Proposal">
+            <div class="video-title">Deer Driver Proposal</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=V2OCazkydRE" target="_blank">
+            <img src="https://img.youtube.com/vi/V2OCazkydRE/maxresdefault.jpg" alt="Beer Scene WIP">
+            <div class="video-title">Beer Scene WIP</div>
+        </a>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=jkqriT_b2co" target="_blank">
+            <img src="https://img.youtube.com/vi/jkqriT_b2co/maxresdefault.jpg" alt="Gunvoster Scene">
+            <div class="video-title">Gunvoster Scene</div>
+        </a>
+
+    </div>
 </div>
 
-<div id="custom-cursor"></div>
+        <div class="section-container" id="code">
+    <div class="card">
+        <h2>Featured Programming Projects</h2>
+        
+        <div class="exp-item">
+            <span>OCT 2024 - PRESENT</span>
+            <h3>Braille-Eyes (Co-founder & Lead Developer)</h3>
+            
+            <a href="https://technomag.co.zw/au-students-unveils-ai-powered-braille-eyes-to-help-the-blind-navigate-freely/" target="_blank" class="featured-press">
+                <img src="technoimage.jpg" alt="TechnoMag Feature">
+                <div class="press-content">
+                    <p>Press Highlight</p>
+                    <h3>AU Students Unveil AI-Powered Braille-Eyes to help the Blind</h3>
+                </div>
+            </a>
 
-<nav>
-    <div class="logo" style="font-weight: 900; letter-spacing: 2px;">M.MZITE</div>
-
-    <div class="nav-links">
-        <a href="#about">ABOUT</a>
-        <a href="#press">PRESS</a>
-        <a href="#graphics">GRAPHICS</a>
-        <a href="#code">PROJECTS</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#contact">CONTACT</a>
-    </div>
-</nav>
-
-<div id="canvas-container"></div>
-
-<div class="main-content">
-
-    <!-- HERO -->
-    <section class="hero-section">
-        <h1>Munyaradzi<br/>Mzite</h1>
-        <p class="subtitle">Software Developer</p>
-        <p class="subtitle">Computer Graphics • AI • Computer Vision</p>
-        <p style="font-size: 1rem; color: #ccc; margin-top: 5px;">
-            preyzmunya@gmail.com
-        </p>
-    </section>
-
-    <!-- ABOUT -->
-    <div class="section-container" id="about">
-        <div class="card">
-
-            <h2>About Me</h2>
-
-            <p style="font-size: 1.2rem; line-height: 1.6; color: #ccc;">
-                I'm a <strong>Software Developer</strong> and
-                <strong>BSc Computer Science graduate</strong> from
-                <strong>Africa University</strong> with a passion for building
-                software at the intersection of <strong>Computer Graphics</strong>,
-                <strong>Artificial Intelligence</strong>, and
-                <strong>Computer Vision</strong>. I enjoy developing systems that
-                combine strong engineering with immersive visual experiences,
-                from AI-powered accessibility tools to interactive 3D applications.
-
-                <br><br>
-
-                My current interests include <strong>3D Gaussian Splatting (3DGS)</strong>,
-                photogrammetry, physically based rendering (PBR), real-time graphics,
-                machine learning, and computer vision. I enjoy researching emerging
-                graphics technologies and experimenting with rendering pipelines,
-                digital twins, and interactive visualization for the web.
-
-                <br><br>
-
-                Whether I'm developing enterprise software, AI-powered tools,
-                or real-time graphics experiences, I'm driven by solving challenging
-                technical problems while continually exploring new technologies and
-                creative ways to apply them.
-            </p>
-
-            <div class="stack-icons">
-                <div class="stack-chip"><img alt="Java" src="https://cdn.simpleicons.org/openjdk/white"/><span>Java</span></div>
-                <div class="stack-chip"><img alt="Spring Boot" src="https://cdn.simpleicons.org/spring/white"/><span>Spring Boot</span></div>
-                <div class="stack-chip"><img alt="Python" src="https://cdn.simpleicons.org/python/white"/><span>Python</span></div>
-                <div class="stack-chip"><img alt="C#" src="https://cdn.simpleicons.org/csharp/white"/><span>C#</span></div>
-                <div class="stack-chip"><img alt="TypeScript" src="https://cdn.simpleicons.org/typescript/white"/><span>TypeScript</span></div>
-                <div class="stack-chip"><img alt="Three.js" src="https://cdn.simpleicons.org/threedotjs/white"/><span>Three.js</span></div>
-                <div class="stack-chip"><img alt="OpenCV" src="https://cdn.simpleicons.org/opencv/white"/><span>OpenCV</span></div>
-                <div class="stack-chip"><span>PlayCanvas</span></div>
-                <div class="stack-chip"><img alt="Blender" src="https://cdn.simpleicons.org/blender/white"/><span>Blender</span></div>
-                <div class="stack-chip"><span>RealityScan</span></div>
-                <div class="stack-chip"><span>Lichtfeld Studio</span></div>
-                <div class="stack-chip"><img alt="Unreal Engine" src="https://cdn.simpleicons.org/unrealengine/white"/><span>Unreal Engine</span></div>
-                <div class="stack-chip"><span>ComfyUI</span></div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/eXyAgsj5vXY?si=k6VOkyNBoPTgrJ-2" allowfullscreen></iframe>
             </div>
 
+            <div class="photo-gallery">
+                <img src="trophy.jpeg" class="lightbox-trigger" alt="Certificate">
+                <img src="prize.jpg" class="lightbox-trigger" alt="POTRAZ Event">
+                <img src="cert.jpg" class="lightbox-trigger" alt="Certificate">
+                <img src="booth.jpg" class="lightbox-trigger" style="border-radius:8px; border: 1px solid rgba(255,255,255,0.1); cursor:pointer;" alt="Navi_Splat Interface">
+            </div>
+
+            <ul style="padding-left: 20px; color: #bbb; font-size: 0.95rem; line-height: 1.6;">
+                <li>Built real-time object detection and obstacle avoidance using Python, OpenCV, and MiDAS on a Raspberry Pi 5.</li>
+                <li>Won 2nd place at POTRAZ 2025 4IR Innovation Competition.</li>
+                <li>Featured on ZBC National News and Diamond FM.</li>
+            </ul>
         </div>
+
+    <div class="exp-item">
+    <span>2025 - PRESENT</span>
+    <h3>ZimVista (3D Digital Twin Platform)</h3>
+
+    <p style="color: #ccc; line-height: 1.6;">
+        ZimVista is a 3D Digital Twin platform that allows users to virtually
+        explore real-world spaces before physically visiting them. Using
+        <strong>3D Gaussian Splatting (3DGS)</strong>, a simple smartphone
+        video can be transformed into a photorealistic, navigable environment
+        that feels closer to a video game than a traditional virtual tour.
+
+        The platform is designed for universities, hotels, Airbnbs, rentals,
+        event venues, shopping centres, and tourism destinations, helping users
+        understand exactly what they are paying for before arrival.
+    </p>
+
+    <div style="margin: 20px 0; display: flex; justify-content: center;">
+        <iframe 
+            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473360208774205441?collapsed=1" 
+            height="550" width="504" 
+            frameborder="0" 
+            allowfullscreen 
+            title="ZimVista LinkedIn Post"
+            style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;">
+        </iframe>
     </div>
 
-    <!-- PRESS & RECOGNITION -->
-    <div class="section-container" id="press">
-        <div class="card">
-
-            <h2>Press & Recognition</h2>
-
-            <p style="font-size: 1rem; line-height: 1.6; color: #aaa;">
-                Selected media coverage and public recognition of my work in
-                software development, artificial intelligence, and innovation.
-            </p>
-
-            <div class="press-grid">
-
-                <!-- THE HERALD -->
-                <a class="press-card"
-                   href="https://www.heraldonline.co.zw/ruwa-training-centre-hailed-as-beacon-of-hope/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <img
-                        src="herald-ruwa.jpg"
-                        alt="Munyaradzi Mzite demonstrating his mobile application at Ruwa Vocational Training Centre"
-                    />
-
-                    <div class="press-card-content">
-
-                        <div class="press-source">
-                            The Herald · August 18, 2026
-                        </div>
-
-                        <h3>
-                            Ruwa training centre hailed as beacon of hope
-                        </h3>
-
-                        <p>
-                            Featured demonstrating my mobile application during
-                            International Youth Day celebrations at Ruwa Vocational
-                            Training Centre, including a demonstration to the Deputy
-                            Minister of Youth Empowerment, Development and Vocational Training.
-                        </p>
-
-                    </div>
-                </a>
-
-                <!-- TECHNOMAG -->
-                <a class="press-card"
-                   href="https://technomag.co.zw/au-students-unveils-ai-powered-braille-eyes-to-help-the-blind-navigate-freely/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <img
-                        src="technoimage.jpg"
-                        alt="TechnoMag feature on Braille-Eyes"
-                    />
-
-                    <div class="press-card-content">
-
-                        <div class="press-source">
-                            TechnoMag
-                        </div>
-
-                        <h3>
-                            AU Students Unveil AI-Powered Braille-Eyes
-                        </h3>
-
-                        <p>
-                            Featured for developing Braille-Eyes, an AI-powered
-                            wearable navigation system designed to assist visually
-                            impaired people.
-                        </p>
-
-                    </div>
-                </a>
-
-            </div>
-
-        </div>
+    <div class="photo-gallery">
+        <img src="zimvista1.png" class="lightbox-trigger" alt="ZimVista Scene">
+        <img src="zimvista2.png" class="lightbox-trigger" alt="ZimVista Navigation">
+        <img src="zimvista3.png" class="lightbox-trigger" alt="ZimVista Interior">
+        <img src="zimvista4.png" class="lightbox-trigger" alt="ZimVista Exterior">
+        <img src="zimvista5.png" class="lightbox-trigger" alt="ZimVista Rental Tour">
+        <img src="zimvista6.png" class="lightbox-trigger" alt="ZimVista University Tour">
     </div>
 
-    <!-- PROGRAMMING PROJECTS -->
-    <div class="section-container" id="code">
-        <div class="card">
-
-            <h2>Featured Programming Projects</h2>
-
-            <!-- BRAILLE EYES -->
-            <div class="exp-item">
-
-                <span>OCT 2024 - PRESENT</span>
-
-                <h3>Braille-Eyes (Co-founder &amp; Lead Developer)</h3>
-
-                <p>
-                    <b>Braille Eyes</b> is an AI-powered wearable navigation
-                    system designed to help visually impaired people move
-                    confidently through unfamiliar environments. Using computer
-                    vision, depth estimation and real-time object detection,
-                    the system identifies nearby obstacles and communicates
-                    their location through spatial audio, allowing users to
-                    understand their surroundings without relying solely on a white cane.
-                </p>
-
-                <ul style="padding-left:20px;color:#bbb;line-height:1.6;">
-                    <li>Built the real-time obstacle detection pipeline using Python and OpenCV running on a Raspberry Pi.</li>
-                    <li>Integrated monocular depth estimation to improve obstacle awareness and distance perception.</li>
-                    <li>Developed a spatial audio feedback system to provide intuitive navigation cues.</li>
-                    <li>Awarded 2nd Place at the POTRAZ 4IR Innovation Expo and featured on ZBC National News and Diamond FM.</li>
-                </ul>
-
-                <div class="stack-icons">
-                    <div class="stack-chip"><img alt="Python" src="https://cdn.simpleicons.org/python/white"/><span>Python</span></div>
-                    <div class="stack-chip"><img alt="OpenCV" src="https://cdn.simpleicons.org/opencv/white"/><span>OpenCV</span></div>
-                    <div class="stack-chip"><img alt="Raspberry Pi" src="https://cdn.simpleicons.org/raspberrypi/white"/><span>Raspberry Pi</span></div>
-                    <div class="stack-chip"><span>Computer Vision</span></div>
-                    <div class="stack-chip"><span>AI</span></div>
-                </div>
-
-                <a class="featured-press"
-                   href="https://technomag.co.zw/au-students-unveils-ai-powered-braille-eyes-to-help-the-blind-navigate-freely/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <img alt="TechnoMag Feature" src="technoimage.jpg"/>
-
-                    <div class="press-content">
-                        <p>Press Highlight</p>
-                        <h3>
-                            AU Students Unveil AI-Powered Braille-Eyes to help the Blind
-                        </h3>
-                    </div>
-
-                </a>
-
-                <div class="video-container">
-                    <iframe
-                        allowfullscreen=""
-                        src="https://www.youtube.com/embed/eXyAgsj5vXY?si=k6VOkyNBoPTgrJ-2">
-                    </iframe>
-                </div>
-
-                <div class="photo-gallery">
-                    <img alt="Certificate" class="lightbox-trigger" src="trophy.jpeg"/>
-                    <img alt="POTRAZ Event" class="lightbox-trigger" src="prize.jpg"/>
-                    <img alt="Certificate" class="lightbox-trigger" src="cert.jpg"/>
-                    <img alt="Navi_Splat Interface" class="lightbox-trigger" src="booth.jpg"/>
-                </div>
-
-                <div class="stack-icons">
-                    <div class="stack-chip"><span>RealityScan</span></div>
-                    <div class="stack-chip"><span>Lichtfeld Studio</span></div>
-                    <div class="stack-chip"><img alt="Blender" src="https://cdn.simpleicons.org/blender/white"/><span>Blender</span></div>
-                    <div class="stack-chip"><img alt="Unreal Engine" src="https://cdn.simpleicons.org/unrealengine/white"/><span>Unreal Engine</span></div>
-                    <div class="stack-chip"><img alt="Three.js" src="https://cdn.simpleicons.org/threedotjs/white"/><span>Three.js</span></div>
-                    <div class="stack-chip"><span>PlayCanvas</span></div>
-                    <div class="stack-chip"><span>ComfyUI</span></div>
-                </div>
-
-                <ul style="padding-left: 20px; color: #bbb; font-size: 0.95rem; line-height: 1.6;">
-                    <li>Built real-time object detection and obstacle avoidance using Python, OpenCV, and MiDAS on a Raspberry Pi 5.</li>
-                    <li>Won 2nd place at POTRAZ 2025 4IR Innovation Competition.</li>
-                    <li>Featured on ZBC National News and Diamond FM.</li>
-                </ul>
-
-            </div>
-
-            <!-- ZIMVISTA -->
-            <div class="exp-item">
-
-                <span>2025 - PRESENT</span>
-
-                <h3>ZimVista (3D Digital Twin Platform)</h3>
-
-                <p style="color:#ccc;line-height:1.6;">
-                    <strong>ZimVista</strong> is an immersive
-                    <strong>3D Digital Twin platform</strong> that transforms
-                    ordinary smartphone captures into interactive, photorealistic
-                    environments using <strong>Gaussian Splatting (3DGS)</strong>
-                    and photogrammetry. Instead of relying on static photographs
-                    or traditional virtual tours, users can freely explore
-                    reconstructed real-world spaces with natural depth and parallax
-                    directly in the browser.
-
-                    <br><br>
-
-                    The project explores how modern reconstruction techniques can
-                    create accessible digital twins for universities, hotels,
-                    museums, tourism, retail, real estate, and other physical spaces.
-                    My long-term goal is to make immersive 3D exploration possible
-                    using everyday devices and modern web technologies.
-                </p>
-
-                <div class="stack-icons">
-                    <div class="stack-chip"><span>RealityScan</span></div>
-                    <div class="stack-chip"><span>Lichtfeld Studio</span></div>
-                    <div class="stack-chip"><img src="https://cdn.simpleicons.org/blender/white"><span>Blender</span></div>
-                    <div class="stack-chip"><img src="https://cdn.simpleicons.org/threedotjs/white"><span>Three.js</span></div>
-                    <div class="stack-chip"><span>PlayCanvas</span></div>
-                    <div class="stack-chip"><img src="https://cdn.simpleicons.org/unrealengine/white"><span>Unreal Engine</span></div>
-                    <div class="stack-chip"><span>ComfyUI</span></div>
-                </div>
-
-                <div class="photo-gallery">
-                    <img src="zimvista1.png" class="lightbox-trigger" alt="ZimVista Scene"/>
-                    <img src="zimvista2.png" class="lightbox-trigger" alt="ZimVista Navigation"/>
-                    <img src="zimvista3.png" class="lightbox-trigger" alt="ZimVista Interior"/>
-                    <img src="zimvista4.png" class="lightbox-trigger" alt="ZimVista Exterior"/>
-                    <img src="zimvista5.png" class="lightbox-trigger" alt="ZimVista Rental Tour"/>
-                    <img src="zimvista6.png" class="lightbox-trigger" alt="ZimVista University Tour"/>
-                </div>
-
-                <ul style="padding-left:20px;color:#bbb;font-size:0.95rem;line-height:1.6;">
-                    <li>Developed a workflow that converts ordinary smartphone captures into photorealistic Gaussian Splat environments.</li>
-                    <li>Built an interactive web viewer for exploring reconstructed spaces with natural depth and parallax.</li>
-                    <li>Researched photogrammetry, Gaussian Splatting (3DGS), and digital twin workflows for real-world environments.</li>
-                    <li>Explored applications in tourism, education, hospitality, cultural preservation, retail, and real estate visualization.</li>
-                    <li>Currently extending the platform with PlayCanvas to create immersive real-time web experiences.</li>
-                </ul>
-
-                <div style="margin:20px 0;display:flex;justify-content:center;">
-                    <iframe
-                        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473360208774205441?collapsed=1"
-                        height="550"
-                        width="504"
-                        frameborder="0"
-                        allowfullscreen
-                        title="ZimVista LinkedIn Post"
-                        style="border-radius:12px;border:1px solid rgba(255,255,255,0.1);max-width:100%;">
-                    </iframe>
-                </div>
-
-            </div>
-
-            <!-- SCIF -->
-            <div class="exp-item">
-
-                <span>2026</span>
-
-                <h3>SCIF (SIM Contact Image Format)</h3>
-
-                <p style="color: #ccc; line-height: 1.6;">
-                    SCIF is an experimental file format that demonstrates how grayscale
-                    image data can be stored inside SIM card contact records.
-                    I made this project as a hack to prove that images can be stored
-                    in constrained storage systems like SIM cards, which are typically
-                    reserved for phonebook entries.
-
-                    <br><br>
-
-                    The project explores constrained storage systems, custom file format
-                    design, and data serialization by implementing a complete encoding,
-                    decoding, verification, and reconstruction pipeline.
-
-                    <br><br>
-
-                    Using this approach I can store a 64x64 grayscale image in a SIM
-                    card's contact storage, which is typically reserved for phonebook entries.
-                </p>
-
-                <div style="margin:20px 0;">
-                    <img
-                        alt="SCIF Architecture"
-                        class="lightbox-trigger"
-                        src="scif-workflow.png"
-                        style="
-                            width:100%;
-                            border-radius:12px;
-                            border:1px solid rgba(255,255,255,0.1);
-                            cursor:pointer;
-                        "
-                    />
-                </div>
-
-                <ul style="padding-left:20px;color:#bbb;font-size:0.95rem;line-height:1.6;">
-                    <li>Designed a custom <strong>.scif</strong> image file format from scratch.</li>
-                    <li>Built a complete encoder and decoder for grayscale image reconstruction.</li>
-                    <li>Simulated SIM card contact storage using fixed-length contact records.</li>
-                    <li>Implemented verification tools to ensure reconstruction integrity.</li>
-                    <li>Generated storage statistics including SIM usage and contact allocation.</li>
-                    <li>Released the first stable version (SCIF v1) as an open-source project.</li>
-                </ul>
-
-                <div class="tag-container" style="margin-top:20px;">
-                    <a class="tag" href="https://github.com/Jindantesparda/SCIF" target="_blank">
-                        GitHub
-                    </a>
-
-                    <div class="stack-icons">
-                        <div class="stack-chip"><img alt="Python" src="https://cdn.simpleicons.org/python/white"/><span>Python</span></div>
-                        <div class="stack-chip"><span>Pillow</span></div>
-                        <div class="stack-chip"><span>Serialization</span></div>
-                        <div class="stack-chip"><span>Image Processing</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- HOMECONNECT -->
-            <div class="exp-item">
-
-                <span>2026</span>
-
-                <h3>HomeConnect (Diaspora Child Welfare Platform)</h3>
-
-                <p style="color: #ccc; line-height: 1.6;">
-                    HomeConnect is a social impact platform designed to support Zimbabwean
-                    families separated by migration. The platform helps parents living
-                    abroad monitor the wellbeing of children left in the care of relatives
-                    while ensuring financial support reaches its intended purpose.
-
-                    <br><br>
-
-                    Through collaboration with social workers, guardians, and parents,
-                    HomeConnect improves transparency, accountability, and communication,
-                    ensuring children receive the support they need despite geographical separation.
-                </p>
-
-                <div style="margin:20px 0;">
-                    <img
-                        alt="HomeConnect Overview"
-                        class="lightbox-trigger"
-                        src="homeconnect-cover.png"
-                        style="
-                            width:100%;
-                            border-radius:12px;
-                            border:1px solid rgba(255,255,255,0.1);
-                            cursor:pointer;
-                        "
-                    />
-                </div>
-
-                <div class="photo-gallery">
-                    <img alt="HomeConnect Dashboard" class="lightbox-trigger" src="homeconnect1.png"/>
-                    <img alt="HomeConnect Child Reports" class="lightbox-trigger" src="homeconnect2.png"/>
-                    <img alt="HomeConnect Financial Tracking" class="lightbox-trigger" src="homeconnect3.png"/>
-                    <img alt="HomeConnect Guardian Portal" class="lightbox-trigger" src="homeconnect4.png"/>
-                    <img alt="HomeConnect Notifications" class="lightbox-trigger" src="homeconnect5.png"/>
-                    <img alt="HomeConnect Mobile Interface" class="lightbox-trigger" src="homeconnect6.png"/>
-                </div>
-
-                <div class="stack-icons">
-                    <div class="stack-chip"><img alt="Java" src="https://cdn.simpleicons.org/openjdk/white"/><span>Java</span></div>
-                    <div class="stack-chip"><img alt="Spring Boot" src="https://cdn.simpleicons.org/spring/white"/><span>Spring Boot</span></div>
-                    <div class="stack-chip"><img alt="TypeScript" src="https://cdn.simpleicons.org/typescript/white"/><span>TypeScript</span></div>
-                </div>
-
-                <ul style="padding-left:20px;color:#bbb;line-height:1.6;">
-                    <li>Supports children whose parents are working outside Zimbabwe.</li>
-                    <li>Tracks welfare reports and living conditions through social worker assessments.</li>
-                    <li>Provides accountability and transparency for remitted funds.</li>
-                    <li>Enables communication between parents, guardians, and support personnel.</li>
-                    <li>Strengthens family connections despite geographical separation.</li>
-                </ul>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!-- COMPUTER GRAPHICS -->
-    <div class="section-container" id="graphics">
-
-        <h2>Computer Graphics</h2>
-
-        <div class="stack-icons">
-            <div class="stack-chip"><span>RealityScan</span></div>
-            <div class="stack-chip"><span>Lichtfeld Studio</span></div>
-            <div class="stack-chip"><img alt="Blender" src="https://cdn.simpleicons.org/blender/white"/><span>Blender</span></div>
-            <div class="stack-chip"><img alt="Inkscape" src="https://cdn.simpleicons.org/inkscape/white"/><span>Inkscape</span></div>
-            <div class="stack-chip"><img alt="Unreal Engine" src="https://cdn.simpleicons.org/unrealengine/white"/><span>Unreal Engine</span></div>
-            <div class="stack-chip"><span>ComfyUI</span></div>
-        </div>
-
-        <h3>Commercial Work</h3>
-
-        <p style="color:#ccc;line-height:1.7;margin-top:-10px;margin-bottom:20px;">
-            Selected commercial animations and product visualizations created
-            for brands and organizations, focusing on cinematic lighting,
-            product presentation, motion design and visual storytelling.
-        </p>
-
-        <div class="video-grid">
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=KcCD5H2ucf0" target="_blank">
-                <img alt="Bvumba Mist Advert" src="https://img.youtube.com/vi/KcCD5H2ucf0/maxresdefault.jpg"/>
-                <div class="video-title">Bvumba Mist Advert (3D Mockup 2025)</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=4LTn85-jc9o" target="_blank">
-                <img alt="Home Connect" src="https://img.youtube.com/vi/4LTn85-jc9o/maxresdefault.jpg"/>
-                <div class="video-title">Home Connect (2026)</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=F4MqL3jv_6Q" target="_blank">
-                <img alt="Ona Natural Oils" src="https://img.youtube.com/vi/F4MqL3jv_6Q/maxresdefault.jpg"/>
-                <div class="video-title">Ona Natural Oils</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=bZJsPfPPHG0" target="_blank">
-                <img alt="Gabe Guckdrop 2" src="https://img.youtube.com/vi/bZJsPfPPHG0/maxresdefault.jpg"/>
-                <div class="video-title">Gabe Guckdrop 2</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=mNf3xePn-LA" target="_blank">
-                <img alt="Gabe Guckdrop" src="https://img.youtube.com/vi/mNf3xePn-LA/maxresdefault.jpg"/>
-                <div class="video-title">Gabe Guckdrop</div>
-            </a>
-
-        </div>
-
-        <h3>Personal Projects &amp; Animation</h3>
-
-        <p style="color:#ccc;line-height:1.7;margin-top:-10px;margin-bottom:20px;">
-            Personal animation and rendering projects exploring storytelling,
-            character animation, lighting, materials, cinematography and
-            stylized visual design in Blender.
-        </p>
-
-        <div class="video-grid">
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=NcoagQrNu2w" target="_blank">
-                <img alt="2D Anime Acrobat" src="https://img.youtube.com/vi/NcoagQrNu2w/maxresdefault.jpg"/>
-                <div class="video-title">2D Anime Acrobat</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=gv0LeXxknWw" target="_blank">
-                <img alt="3D Character Animation" src="https://img.youtube.com/vi/gv0LeXxknWw/maxresdefault.jpg"/>
-                <div class="video-title">3D Character Animation</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=dLEk9eDhq9I" target="_blank">
-                <img alt="2D Animation Run Cycle" src="https://img.youtube.com/vi/dLEk9eDhq9I/maxresdefault.jpg"/>
-                <div class="video-title">2D Animation Run Cycle</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=CAD1JIJU5FQ" target="_blank">
-                <img alt="Final BMO Animation" src="https://img.youtube.com/vi/CAD1JIJU5FQ/maxresdefault.jpg"/>
-                <div class="video-title">Final BMO Animation</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=AX50ZrXAZ7Y" target="_blank">
-                <img alt="2D Breakdown" src="https://img.youtube.com/vi/AX50ZrXAZ7Y/maxresdefault.jpg"/>
-                <div class="video-title">2D Breakdown</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=CCQCC9qtaxs" target="_blank">
-                <img alt="Mako Stories" src="https://img.youtube.com/vi/CCQCC9qtaxs/maxresdefault.jpg"/>
-                <div class="video-title">Mako Stories</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=reRqeSdG5ok" target="_blank">
-                <img alt="Deer Driver Proposal" src="https://img.youtube.com/vi/reRqeSdG5ok/maxresdefault.jpg"/>
-                <div class="video-title">Deer Driver Proposal</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=V2OCazkydRE" target="_blank">
-                <img alt="Beer Scene WIP" src="https://img.youtube.com/vi/V2OCazkydRE/maxresdefault.jpg"/>
-                <div class="video-title">Beer Scene WIP</div>
-            </a>
-
-            <a class="video-thumb" href="https://www.youtube.com/watch?v=jkqriT_b2co" target="_blank">
-                <img alt="Gunvoster Scene" src="https://img.youtube.com/vi/jkqriT_b2co/maxresdefault.jpg"/>
-                <div class="video-title">Gunvoster Scene</div>
-            </a>
-
-        </div>
-
-        <h3>Graphics Research</h3>
-
-        <p style="color:#ccc;line-height:1.7;margin-top:-10px;margin-bottom:20px;">
-            My current research explores modern computer graphics beyond
-            traditional animation, with a particular interest in Gaussian
-            Splatting (3DGS), photogrammetry, neural rendering, physically
-            based rendering (PBR), depth estimation, real-time rendering,
-            interactive web graphics, camera and lens simulation, and
-            AI-assisted graphics workflows. I'm currently building interactive
-            Gaussian Splat experiences for the web using PlayCanvas while
-            exploring digital twins and immersive visualization.
-        </p>
-
-    </div>
-
-    <!-- EXPERIENCE -->
-    <div class="section-container" id="experience">
-        <div class="card">
-
-            <h2>Professional Experience</h2>
-
-            <div class="exp-item">
-
-                <span>OCT 2025 - June 2026</span>
-
-                <h3>Software Developer Intern</h3>
-
-                <p>
-                    <strong>NetOne Cellular Private Limited</strong>
-                </p>
-
-                <ul style="padding-left:20px;color:#ccc;line-height:1.6;">
-                    <li>Developing telecommunications solutions using Java, Python, and Three.js.</li>
-                    <li>Working with cloud infrastructure and backend systems.</li>
-                </ul>
-
-            </div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 3rem 0;"/>
-
-            <h2>Education &amp; Certificates</h2>
-
-            <div class="exp-item">
-
-                <span>2022 - 2026</span>
-
-                <h3>B.Sc Computer Science</h3>
-
-                <p>
-                    Africa University (CGPA 3.54)
-                </p>
-
-            </div>
-
-            <div class="exp-item">
-
-                <span>Certifications</span>
-
-                <ul style="padding-left:20px;color:#ccc;">
-                    <li>Introduction to Cybersecurity (Cisco)</li>
-                    <li>Java for Beginners (Udemy)</li>
-                    <li>Building with Artificial Intelligence (Saylor)</li>
-                    <li>Introduction to Python (Saylor)</li>
-                    <li>Information Security (Cisco)</li>
-                </ul>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="section-container" id="contact">
-        <div class="card">
-
-            <h2>Connect</h2>
-
-            <div class="tag-container">
-
-                <a class="tag"
-                   href="https://github.com/Jindantesparda"
-                   target="_blank">
-                    GITHUB
-                </a>
-
-                <a class="tag"
-                   href="https://www.linkedin.com/in/munyaradzi-mzite-1499b320/"
-                   target="_blank">
-                    LINKEDIN
-                </a>
-
-                <a class="tag"
-                   href="https://www.instagram.com/sssensationall/"
-                   target="_blank">
-                    INSTAGRAM
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Munyaradzi Mzite. All Rights Reserved.</p>
-    </footer>
-
+    <ul style="padding-left: 20px; color: #bbb; font-size: 0.95rem; line-height: 1.6;">
+        <li>Converts ordinary smartphone videos into immersive 3D Gaussian Splatting environments.</li>
+        <li>Allows prospective tenants, Airbnb guests, and tourists to inspect locations before arrival.</li>
+        <li>Reduces spatial anxiety by enabling realistic virtual walkthroughs.</li>
+        <li>Provides accessibility assessment for wheelchair users and individuals with mobility challenges.</li>
+        <li>Creates digital twins for universities, businesses, hotels, and tourism destinations.</li>
+    </ul>
 </div>
 
-<script type="importmap">
-{
-    "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-}
-</script>
 
-<script type="module">
+<div class="exp-item">
+    <span>2026</span>
+    <h3>SCIF (SIM Contact Image Format)</h3>
 
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { RGBShiftShader } from 'three/addons/shaders/RGBShiftShader.js';
+    <p style="color: #ccc; line-height: 1.6;">
+        SCIF is an experimental file format that demonstrates how grayscale
+        image data can be stored inside SIM card contact records.
+        The project explores constrained storage systems, custom file format
+        design, and data serialization by implementing a complete encoding,
+        decoding, verification, and reconstruction pipeline.
+        <p>Using this approach I can store a 64x64 grayscale image in a sim card's contact storage, which is typically reserved for phonebook entries.</p>
+    </p>
+
+    <div style="margin:20px 0;">
+        <img
+            src="scif-workflow.png"
+            class="lightbox-trigger"
+            alt="SCIF Architecture"
+            style="
+                width:100%;
+                border-radius:12px;
+                border:1px solid rgba(255,255,255,0.1);
+                cursor:pointer;
+            ">
+    </div>
+
+    <ul style="padding-left:20px; color:#bbb; font-size:0.95rem; line-height:1.6;">
+        <li>Designed a custom <strong>.scif</strong> image file format from scratch.</li>
+        <li>Built a complete encoder and decoder for grayscale image reconstruction.</li>
+        <li>Simulated SIM card contact storage using fixed-length contact records.</li>
+        <li>Implemented verification tools to ensure reconstruction integrity.</li>
+        <li>Generated storage statistics including SIM usage and contact allocation.</li>
+        <li>Released the first stable version (SCIF v1) as an open-source project.</li>
+    </ul>
+
+    <div class="tag-container" style="margin-top:20px;">
+        <a href="https://github.com/Jindantesparda/SCIF" class="tag" target="_blank">
+            GitHub
+        </a>
+
+        <span class="tag">Python</span>
+        <span class="tag">Pillow</span>
+        <span class="tag">Custom File Format</span>
+        <span class="tag">Serialization</span>
+        <span class="tag">Image Processing</span>
+    </div>
+</div>
+
+<div class="exp-item">
+    <span>2026</span>
+    <h3>HomeConnect (Diaspora Child Welfare Platform)</h3>
+
+    <p style="color: #ccc; line-height: 1.6;">
+        HomeConnect is a social impact platform designed to support Zimbabwean
+        families separated by migration. The platform helps parents living
+        abroad monitor the wellbeing of children left in the care of relatives
+        while ensuring financial support reaches its intended purpose.
+
+        Through collaboration with social workers, guardians, and parents,
+        HomeConnect improves transparency, accountability, and communication,
+        ensuring children receive the support they need despite geographical
+        separation.
+    </p>
+<div style="margin: 20px 0;">
+    <img
+        src="homeconnect-cover.png"
+        class="lightbox-trigger"
+        alt="HomeConnect Overview"
+        style="
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        ">
+</div>
+
+    <div class="photo-gallery">
+        <img src="homeconnect1.png" class="lightbox-trigger" alt="HomeConnect Dashboard">
+        <img src="homeconnect2.png" class="lightbox-trigger" alt="HomeConnect Child Reports">
+        <img src="homeconnect3.png" class="lightbox-trigger" alt="HomeConnect Financial Tracking">
+        <img src="homeconnect4.png" class="lightbox-trigger" alt="HomeConnect Guardian Portal">
+        <img src="homeconnect5.png" class="lightbox-trigger" alt="HomeConnect Notifications">
+        <img src="homeconnect6.png" class="lightbox-trigger" alt="HomeConnect Mobile Interface">
+    </div>
+
+    <ul style="padding-left: 20px; color: #bbb; font-size: 0.95rem; line-height: 1.6;">
+        <li>Supports children whose parents are working outside Zimbabwe.</li>
+        <li>Tracks welfare reports and living conditions through social worker assessments.</li>
+        <li>Provides accountability and transparency for remitted funds.</li>
+        <li>Enables communication between parents, guardians, and support personnel.</li>
+        <li>Strengthens family connections despite geographical separation.</li>
+    </ul>
+</div>
+
+        <div class="section-container" id="experience">
+            <div class="card">
+                <h2>Professional Experience</h2>
+                <div class="exp-item">
+                    <span>OCT 2025 - June 2026</span>
+                    <h3>Software Developer Intern</h3>
+                    <p><strong>NetOne Cellular Private Limited</strong></p>
+                    <ul style="padding-left: 20px; color: #ccc; line-height: 1.6;">
+                        <li>Developing telecommunications solutions using Java, Python, and Three.js.</li>
+                        <li>Working with cloud infrastructure and backend systems.</li>
+                    </ul>
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 3rem 0;">
+                <h2>Education & Certificates</h2>
+                <div class="exp-item">
+                    <span>2022 - 2026</span>
+                    <h3>B.Sc Computer Science</h3>
+                    <p>Africa University (CGPA 3.54)</p>
+                </div>
+                <div class="exp-item">
+                    <span>Certifications</span>
+                    <ul style="padding-left: 20px; color: #ccc;">
+                        <li>Introduction to Cybersecurity (Cisco)</li>
+                        <li>Java for Beginners (Udemy)</li>
+                        <li>Building with Artificial Intelligence (Saylor)</li>
+                        <li>Introduction to Python (Saylor)</li>
+                        <li>Information Security (Cisco)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container" id="contact">
+            <div class="card">
+                <h2>Connect</h2>
+                <div class="tag-container">
+                    <a href="https://github.com/Jindantesparda" class="tag" target="_blank">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/munyaradzi-mzite-1499b3202/" class="tag" target="_blank">LINKEDIN</a>
+                    <a href="https://www.instagram.com/sssensationall/" class="tag" target="_blank">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+        <footer><p>© 2026 Munyaradzi Mzite. All Rights Reserved.</p></footer>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+        import { RGBShiftShader } from 'three/addons/shaders/RGBShiftShader.js';
 
 let scene, camera, renderer, model, pointLight, wrapper, composer;
 
@@ -1489,25 +1141,9 @@ function init() {
             );
 
         }
-    );
 
-}
-
-
-/* Animation */
-
-function animate() {
-
-    requestAnimationFrame(animate);
-
-    composer.render();
-
-}
-
-
-init();
-
-</script>
-
+        function animate() { requestAnimationFrame(animate); composer.render(); }
+        init();
+    </script>
 </body>
 </html>
