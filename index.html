@@ -520,6 +520,33 @@
         border-radius: 10px;
     }
 
+    /* Live Gaussian Splat viewer */
+    .splat-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        margin: 28px 0;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: #111;
+    }
+
+    .splat-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+    }
+
+    .splat-caption {
+        color: #888;
+        font-size: 0.8rem;
+        margin-top: -16px;
+        margin-bottom: 24px;
+        letter-spacing: 0.3px;
+    }
+
     footer {
         text-align: center;
         padding: 4rem;
@@ -559,6 +586,23 @@
     .stack-chip img {
         width: 18px;
         height: 18px;
+    }
+
+    /* Search Vailable brand logo */
+    .searchvailable-logo {
+        display: block;
+        width: min(860px, 80%);
+        height: auto;
+        margin: 0 0 0.5rem 0;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    @media (max-width: 768px) {
+        .searchvailable-logo {
+            width: min(300px, 90%);
+            margin-bottom: 0.75rem;
+        }
     }
 </style>
 </head>
@@ -841,6 +885,26 @@
                     using everyday devices and modern web technologies.
                 </p>
 
+                <a class="featured-press"
+                   href="https://www.heraldonline.co.zw/ruwa-training-centre-hailed-as-beacon-of-hope/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img
+                        alt="The Herald feature showing Munyaradzi Mzite demonstrating ZimVista"
+                        src="herald-ruwa.jpg"
+                    />
+
+                    <div class="press-content">
+                        <p>The Herald · August 18, 2026</p>
+                        <h3>ZimVista Demonstration Featured in The Herald</h3>
+                        <p style="color:#aaa;font-weight:400;font-size:0.9rem;letter-spacing:0;text-transform:none;">
+                            Featured demonstrating ZimVista during International Youth Day
+                            celebrations at Ruwa Vocational Training Centre.
+                        </p>
+                    </div>
+                </a>
+
                 <div class="stack-icons">
                     <div class="stack-chip"><span>RealityScan</span></div>
                     <div class="stack-chip"><span>Lichtfeld Studio</span></div>
@@ -860,6 +924,37 @@
                     <img src="zimvista6.png" class="lightbox-trigger" alt="ZimVista University Tour"/>
                 </div>
 
+                <h3 style="margin-top:32px;">Live 3D Scans</h3>
+                <p style="color:#aaa;line-height:1.6;margin-top:-8px;">
+                    Interactive Gaussian Splat reconstructions captured at Manica SkyView Hotel in Mutare.
+                </p>
+
+                <div class="splat-container">
+                    <iframe
+                        id="cock-n-hen-supersplat-viewer"
+                        allow="fullscreen; xr-spatial-tracking"
+                        src="https://superspl.at/s?id=351370f0"
+                        title="Manica SkyView Hotel Cock 'n' Hen Restaurant — Interactive Gaussian Splat"
+                    ></iframe>
+                </div>
+
+                <p class="splat-caption">
+                    <strong>Cock 'n' Hen Restaurant</strong> · Manica SkyView Hotel
+                </p>
+
+                <div class="splat-container">
+                    <iframe
+                        id="nest-supersplat-viewer"
+                        allow="fullscreen; xr-spatial-tracking"
+                        src="https://superspl.at/s?id=84c37677"
+                        title="Manica SkyView Hotel Nest Restaurant — Interactive Gaussian Splat"
+                    ></iframe>
+                </div>
+
+                <p class="splat-caption">
+                    <strong>Nest Restaurant</strong> · Manica SkyView Hotel
+                </p>
+
                 <ul style="padding-left:20px;color:#bbb;font-size:0.95rem;line-height:1.6;">
                     <li>Developed a workflow that converts ordinary smartphone captures into photorealistic Gaussian Splat environments.</li>
                     <li>Built an interactive web viewer for exploring reconstructed spaces with natural depth and parallax.</li>
@@ -868,22 +963,17 @@
                     <li>Currently extending the platform with PlayCanvas to create immersive real-time web experiences.</li>
                 </ul>
 
-                <div style="margin:20px 0;display:flex;justify-content:center;">
-                    <iframe
-                        src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473360208774205441?collapsed=1"
-                        height="550"
-                        width="504"
-                        frameborder="0"
-                        allowfullscreen
-                        title="ZimVista LinkedIn Post"
-                        style="border-radius:12px;border:1px solid rgba(255,255,255,0.1);max-width:100%;">
-                    </iframe>
                 </div>
 
             </div>
 
             <!-- SEARCH VAILABLE -->
 <div class="exp-item">
+    <img
+        class="searchvailable-logo"
+        src="searchvailablelogo.png"
+        alt="Search Vailable"
+    />
     <span>2026 - PRESENT</span>
     <h3>Search Vailable (SEO &amp; Search Visibility SaaS)</h3>
 
@@ -1081,7 +1171,6 @@
             </div>
 
         </div>
-    </div>
 
     <!-- COMPUTER GRAPHICS -->
     <div class="section-container" id="graphics">
@@ -1211,6 +1300,25 @@
         <div class="card">
 
             <h2>Professional Experience</h2>
+
+            <div class="exp-item">
+
+                <span>AUG 2026 - PRESENT</span>
+
+                <h3>IT Intern</h3>
+
+                <p>
+                    <strong>Manica SkyView Hotel</strong>
+                </p>
+
+                <ul style="padding-left:20px;color:#ccc;line-height:1.6;">
+                    <li>Developing a virtual tour platform for the hotel using computer graphics and 3D Gaussian Splatting.</li>
+                    <li>Developing marketing advertisements for the hotel using computer graphics and artificial intelligence.</li>
+                    <li>Maintaining the hotel network infrastructure.</li>
+                    <li>Providing IT support for guests and troubleshooting technical issues.</li>
+                </ul>
+
+            </div>
 
             <div class="exp-item">
 
