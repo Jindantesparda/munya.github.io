@@ -520,16 +520,78 @@
         border-radius: 10px;
     }
 
-    /* Live Gaussian Splat viewer */
+    /* Live Gaussian Splat viewer (click to load) */
+    .splat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 20px 0 4px;
+    }
+
+    .splat-card {
+        margin: 0;
+        min-width: 0;
+    }
+
     .splat-container {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 10;
+        height: 140px;
         overflow: hidden;
-        margin: 28px 0;
-        border-radius: 12px;
+        border-radius: 8px;
         border: 1px solid rgba(255,255,255,0.12);
         background: #111;
+        transition: height 0.3s ease, border-color 0.3s ease;
+    }
+
+    .splat-container.is-loaded {
+        height: 320px;
+        border-color: rgba(0,242,255,0.35);
+    }
+
+    .splat-load-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 0.75rem;
+        text-align: center;
+        color: white;
+        background: radial-gradient(circle at 50% 35%, rgba(0,242,255,0.18), transparent 55%), #111;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .splat-load-button:hover,
+    .splat-load-button:focus-visible {
+        background: radial-gradient(circle at 50% 35%, rgba(0,242,255,0.3), transparent 55%), #151515;
+        outline: 2px solid #00f2ff;
+        outline-offset: -4px;
+    }
+
+    .splat-play {
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        border-left: 13px solid #00f2ff;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+    }
+
+    .splat-hint {
+        font-size: 0.6rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: none;
+        color: #7d7d7d;
     }
 
     .splat-container iframe {
@@ -542,8 +604,7 @@
     .splat-caption {
         color: #888;
         font-size: 0.8rem;
-        margin-top: -16px;
-        margin-bottom: 24px;
+        margin: 8px 0 0;
         letter-spacing: 0.3px;
     }
 
@@ -555,6 +616,28 @@
     }
 
     @media (max-width: 768px) {
+        .splat-grid {
+            gap: 8px;
+        }
+
+        .splat-container {
+            height: 110px;
+        }
+
+        .splat-container.is-loaded {
+            height: 230px;
+        }
+
+        .splat-load-button {
+            font-size: 0.62rem;
+            gap: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .splat-hint {
+            display: none;
+        }
+
         footer {
             padding: 2.5rem 1rem;
         }
@@ -929,31 +1012,33 @@
                     Interactive Gaussian Splat reconstructions captured at Manica SkyView Hotel in Mutare.
                 </p>
 
-                <div class="splat-container">
-                    <iframe
-                        id="cock-n-hen-supersplat-viewer"
-                        allow="fullscreen; xr-spatial-tracking"
-                        src="https://superspl.at/s?id=351370f0"
-                        title="Manica SkyView Hotel Cock 'n' Hen Restaurant — Interactive Gaussian Splat"
-                    ></iframe>
+                <div class="splat-grid">
+                    <figure class="splat-card">
+                        <div class="splat-container" data-splat-src="https://superspl.at/s?id=351370f0" data-splat-title="Manica SkyView Hotel Cock 'n' Hen Restaurant — Interactive Gaussian Splat">
+                            <button class="splat-load-button" type="button">
+                                <span class="splat-play" aria-hidden="true"></span>
+                                <span>Load 3D scan</span>
+                                <span class="splat-hint">Click to load</span>
+                            </button>
+                        </div>
+                        <figcaption class="splat-caption">
+                            <strong>Cock 'n' Hen Restaurant</strong> · Manica SkyView Hotel
+                        </figcaption>
+                    </figure>
+
+                    <figure class="splat-card">
+                        <div class="splat-container" data-splat-src="https://superspl.at/s?id=84c37677" data-splat-title="Manica SkyView Hotel Nest Restaurant — Interactive Gaussian Splat">
+                            <button class="splat-load-button" type="button">
+                                <span class="splat-play" aria-hidden="true"></span>
+                                <span>Load 3D scan</span>
+                                <span class="splat-hint">Click to load</span>
+                            </button>
+                        </div>
+                        <figcaption class="splat-caption">
+                            <strong>Nest Restaurant</strong> · Manica SkyView Hotel
+                        </figcaption>
+                    </figure>
                 </div>
-
-                <p class="splat-caption">
-                    <strong>Cock 'n' Hen Restaurant</strong> · Manica SkyView Hotel
-                </p>
-
-                <div class="splat-container">
-                    <iframe
-                        id="nest-supersplat-viewer"
-                        allow="fullscreen; xr-spatial-tracking"
-                        src="https://superspl.at/s?id=84c37677"
-                        title="Manica SkyView Hotel Nest Restaurant — Interactive Gaussian Splat"
-                    ></iframe>
-                </div>
-
-                <p class="splat-caption">
-                    <strong>Nest Restaurant</strong> · Manica SkyView Hotel
-                </p>
 
                 <ul style="padding-left:20px;color:#bbb;font-size:0.95rem;line-height:1.6;">
                     <li>Developed a workflow that converts ordinary smartphone captures into photorealistic Gaussian Splat environments.</li>
@@ -1454,6 +1539,32 @@ window.onclick = (e) => {
         modal.style.display = "none";
     }
 };
+
+/* Gaussian Splat cards: nothing loads until the visitor clicks */
+
+document.querySelectorAll('.splat-container').forEach(container => {
+    const loadButton = container.querySelector('.splat-load-button');
+
+    if (!loadButton) return;
+
+    loadButton.addEventListener('click', () => {
+        if (container.classList.contains('is-loaded')) return;
+
+        const viewer = document.createElement('iframe');
+        const label = document.createElement('span');
+
+        viewer.allow = 'fullscreen; xr-spatial-tracking';
+        viewer.src = container.dataset.splatSrc;
+        viewer.title = container.dataset.splatTitle;
+
+        label.className = 'splat-hint';
+        label.textContent = 'Loading 3D scan…';
+
+        loadButton.replaceChildren(label);
+        container.classList.add('is-loaded');
+        container.replaceChildren(viewer);
+    });
+});
 
 
 /* Three.js Scene */
